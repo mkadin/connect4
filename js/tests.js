@@ -78,7 +78,7 @@ test("Game" , function () {
     }
     ok(counter == 0, "resetCheckers() resets each element in the 2-D array to be null");
     
-    // Confirm that all checkers have been removed from the dom.
+    // Confirm that all checkers have been removed from the DOM.
     ok($('.checker').length == 0, "All checkers have been removed from the DOM on reset");
     start();
     

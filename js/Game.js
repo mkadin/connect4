@@ -239,9 +239,6 @@ var Game = function (numRows, numCols, selector) {
 
     // Loop through the directions
     for (var direction in steps) {
-      // Set the row and column to be at the starting point.
-      row = originalRow;
-      col = originalCol;
 
       // Set a counter of total checkers of the correct color found in this
       // direction.
@@ -251,6 +248,11 @@ var Game = function (numRows, numCols, selector) {
       var rowDelta = steps[direction].row;
       var colDelta = steps[direction].col;
 
+      // Set the row and column to be at the starting point + one move in the
+      // current direction.  No need to check the same middle checker each time.
+      row = parseInt(originalRow)  + parseInt(rowDelta);
+      col = parseInt(originalCol) + parseInt(colDelta);
+
       // Step the row/col center in the current direction, and determine if the
       // checker is the right color. If it is, add 1 to the total, and keep
       // going in that direction.
@@ -259,21 +261,21 @@ var Game = function (numRows, numCols, selector) {
         row = parseInt(row) + parseInt(rowDelta);
         col = parseInt(col) +  parseInt(colDelta);
       }
+      console.log(direction, steps[direction].total);
     }
 
     // Check each of the 4 directions (horiziontal, vertical, and the two diag.)
-    
     // For up, there can only ever be 1 in a row.
-    if (1 + steps.down.total > 4) {
+    if (steps.down.total >= 3) {
       return true;
     }
-    if (steps.left.total + steps.right.total > 4) {
+    if (steps.left.total + steps.right.total >= 3) {
       return true;
     }
-    if (steps.upleft.total + steps.downright.total > 4) {
+    if (steps.upleft.total + steps.downright.total >= 3) {
       return true;
     }
-    if (steps.upright.total + steps.downleft.total > 4) {
+    if (steps.upright.total + steps.downleft.total >= 3) {
       return true;
     }
 
