@@ -70,6 +70,7 @@ body {
   width:50px;
   padding:0;
   background-image:url(images/board-bg.png);
+  cursor:pointer;
 }
 
 #board-table-wrapper {
