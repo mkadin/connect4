@@ -261,7 +261,6 @@ var Game = function (numRows, numCols, selector) {
         row = parseInt(row) + parseInt(rowDelta);
         col = parseInt(col) +  parseInt(colDelta);
       }
-      console.log(direction, steps[direction].total);
     }
 
     // Check each of the 4 directions (horiziontal, vertical, and the two diag.)
