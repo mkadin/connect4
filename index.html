@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="css/styles.css" type="text/css" rel="stylesheet" />
     <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/Checker.js" type="text/javascript"></script>
+    <script src="js/Game.js" type="text/javascript"></script>
     <script src="js/app.js" type="text/javascript"></script>
   </head>
   <body>
@@ -16,8 +18,18 @@
           <div id="whos-turn-content"></div>
         </div>
       </div>
-      <div id="board"></div>
-      <div id="footer"></div>
+      <div id="board">
+        <div id="board-table-wrapper">
+        </div>
+      </div>
+      <div id="footer">
+        <button id="new-game">New Game</button>
+        <p id="player-scores">
+          <span id="player-1-score-wrapper"><strong>Player 1:</strong> <span id="player-1-score">0</span></span>
+          <span id="player-2-score-wrapper"><strong>Player 2:</strong> <span id="player-2-score">0</span></span>
+          <span id="message" style="display:none;"></span>
+        </p>
+      </div>
     </div>
   </body>
 </html>

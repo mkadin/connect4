@@ -1,21 +1,129 @@
 body {
-  background: -moz-linear-gradient(left,  rgba(30,87,153,0) 0%, rgba(30,87,153,0.8) 15%, rgba(30,87,153,1) 19%, rgba(30,87,153,1) 20%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 80%, rgba(30,87,153,1) 81%, rgba(30,87,153,0.8) 85%, rgba(30,87,153,0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(30,87,153,0)), color-stop(15%,rgba(30,87,153,0.8)), color-stop(19%,rgba(30,87,153,1)), color-stop(20%,rgba(30,87,153,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(80%,rgba(30,87,153,1)), color-stop(81%,rgba(30,87,153,1)), color-stop(85%,rgba(30,87,153,0.8)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* IE10+ */
-  background: linear-gradient(to right,  rgba(30,87,153,0) 0%,rgba(30,87,153,0.8) 15%,rgba(30,87,153,1) 19%,rgba(30,87,153,1) 20%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 80%,rgba(30,87,153,1) 81%,rgba(30,87,153,0.8) 85%,rgba(30,87,153,0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 */
+  background-color:#CCC;
 }
-
 
 #page {
   width:960px;
   margin:0px auto;
-  background-color:#aaa;
+}
+
+#header,
+#board,
+#footer {
+  box-shadow:1px 1px 5px 0px black;
+  background-color:white;
+  border-radius:25px;
 }
 
 #header {
   height:100px;
-  box-shadow:1px 1px 5px 0px black;
+}
+
+#page-title {
+  font-size:40px;
+  line-height:100px;
+  margin:0 0 0 20px;
+  float:left;
+}
+
+#whos-turn {
+  float:right;
+  margin: 15px 20px 0px 0px;
+  width:200px;
+  border:1px solid black;
+  padding:10px;
+  height:50px;
+  border-radius:25px;
+  text-align:center;
+  background-color:white;
+}
+
+#whos-turn.player-1 {
+  background-color:black;
+  color:white;
+}
+
+#whos-turn.player-2 {
+  background-color:red;
+  color:black;
+}
+
+#board {
+  padding:80px 0px 20px 0px;
+  margin-top:30px;
+}
+
+.test-page #board-table-wrapper {
+  position:absolute;
+  top:-2000px;
+}
+
+#board-table {
+  margin:0px auto;
+  border-collapse:collapse;
+  position:relative;
+  z-index:99;
+}
+
+#board-table td {
+  height:50px;
+  width:50px;
+  padding:0;
+  background-image:url(images/board-bg.png);
+}
+
+#board-table-wrapper {
+  position:relative;
+  margin:0px auto;
+}
+
+.checker {
+  height:48px;
+  width:48px;
+  position:absolute;
+  border-radius:25px;
+}
+
+.checker.player-1 {
+  background-color:black;
+}
+
+.checker.player-2 {
+  background-color:red;
+}
+
+#footer {
+  height:100px;
+}
+
+#new-game {
+  float:right;
+  height:30px;
+  margin:35px;
+}
+
+#player-scores {
+  line-height:100px;
+}
+
+#player-1-score-wrapper {
+  padding:0 30px;
+  border-right:2px solid black;
+}
+
+#player-2-score-wrapper {
+  padding:0 30px;
+}
+
+#message {
+  display: inline;
+  padding: 5px 30px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+  margin-left:100px;
+}
+
+#whos-turn-label {
+  font-weight:bold;
 }
